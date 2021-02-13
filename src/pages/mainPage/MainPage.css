@@ -1,0 +1,30 @@
+.title {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  margin: auto;
+}
+.main-title {
+  font-size: 6vh;
+  margin-top: 1.5vh;
+  color: rgb(117, 195, 190);
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.main-page {
+  justify-content: center;
+  text-align: center;
+}
+
+table {
+  table-layout: fixed;
+}
+
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 10%;
+  text-align: center;
+  background-color: bisque;
+  color: white;
+}

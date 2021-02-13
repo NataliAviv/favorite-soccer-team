@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import MainPage from './pages/mainPage/MainPage';
+import Login from './pages/login/Login';
+import SignUp from './pages/signup/SignUp';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route
+} from 'react-router-dom';
+import { getFromStorage } from './storage';
 
 function App() {
+  const isLogin = getFromStorage('token') ? true : false;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route
+          exact
+          path='/'
+          render={() => {
+            return isLogin ? <Redirect to='/main' /> : <Redirect to='/login' />;
+          }}
+        />
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/signUp'>
+          <SignUp />
+        </Route>
+        <Route path='/main'>
+          <MainPage />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

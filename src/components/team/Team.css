@@ -1,0 +1,8 @@
+.crest-image {
+  height: max(min(10vw, 90px), 30px);
+}
+
+.he-row {
+  text-align: center;
+  width: 100%;
+}
